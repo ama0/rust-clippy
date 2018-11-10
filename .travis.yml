@@ -47,12 +47,12 @@ install:
 
 matrix:
   include:
-    - os: osx # run base tests on both platforms
+    - os: osx
       env: BASE_TESTS=true
     - os: linux
       env: BASE_TESTS=true
     - os: windows
-      env: BASE_TEST=true
+      env: BASE_TESTS=true
     - env: INTEGRATION=rust-lang/cargo
     - env: INTEGRATION=rust-lang-nursery/rand
     - env: INTEGRATION=rust-lang-nursery/stdsimd
