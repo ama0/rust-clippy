@@ -41,7 +41,7 @@ install:
       echo "the cake is a lie"
       if [ "$TRAVIS_OS_NAME" == "windows" ]; then
         echo "first debug"
-        choco install windows-sdk-10.0
+        choco install windows-sdk-10.0 -v
         echo "second debug"
         find tests/ui/* \( -name '*.rs' -or -name '*.stderr' -or -name '*.stdout' \) -exec dos2unix '{}' +
         echo "third debug"
