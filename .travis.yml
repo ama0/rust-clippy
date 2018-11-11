@@ -38,12 +38,17 @@ install:
         nvm use stable
         npm install remark-cli remark-lint
       fi
+      echo "the cake is a lie"
       if [ "$TRAVIS_OS_NAME" == "windows" ]; then
+        echo "first debug"
         choco install windows-sdk-10.0
+        echo "second debug"
         find tests/ui/* \( -name '*.rs' -or -name '*.stderr' -or -name '*.stdout' \) -exec dos2unix '{}' +
+        echo "third debug"
         find tests/ui-toml/* \( -name '*.rs' -or -name '*.stderr' -or -name '*.stdout' -or -name '*.toml' \) -exec dos2unix '{}' +
       fi
     fi
+    echo "end of install step"
 
 matrix:
   include:
