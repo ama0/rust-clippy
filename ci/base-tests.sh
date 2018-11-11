@@ -27,6 +27,7 @@ cd clippy_dev && cargo test && cd ..
 # Perform various checks for lint registration
 ./util/dev update_lints --check
 
+PATH=$PATH:$(rustc --print sysroot)/bin
 CLIPPY="`pwd`/target/debug/cargo-clippy clippy"
 # run clippy on its own codebase...
 ${CLIPPY} --all-targets --all-features -- -D clippy::all -D clippy::internal -Dclippy::pedantic
